@@ -14,12 +14,19 @@ class DashboardController extends Controller
         $customers = Customer::query()
             ->orderByDesc('visit_count')
             ->get()
-            ->map(fn (Customer $customer) => [
-                'customerId' => $customer->external_id,
-                'visitCount' => $customer->visit_count,
-                'treesPlanted' => $customer->trees_planted,
-                'lastConnectedAt' => $customer->last_connected_at?->toIso8601String(),
-            ])
+            ->map(function (Customer $customer) {
+                $lastConnectedAt = $customer->last_connected_at;
+
+                return [
+                    'customerId' => $customer->external_id,
+                    'displayName' => $customer->name ?? $customer->external_id,
+                    'visitCount' => $customer->visit_count,
+                    'treesPlanted' => $customer->trees_planted,
+                    'lastSeen' => $lastConnectedAt === null
+                        ? '—'
+                        : $lastConnectedAt->format('M j, Y, g:i A'),
+                ];
+            })
             ->values()
             ->all();
 

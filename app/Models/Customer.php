@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['external_id', 'visit_count', 'trees_planted', 'last_connected_at'])]
+#[Fillable(['external_id', 'name', 'visit_count', 'trees_planted', 'last_connected_at'])]
 class Customer extends Model
 {
     public $timestamps = false;

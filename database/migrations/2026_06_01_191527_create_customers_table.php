@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('external_id')->unique();
+            $table->string('name')->nullable();
             $table->unsignedInteger('visit_count')->default(0);
             $table->unsignedInteger('trees_planted')->default(0);
             $table->timestamp('last_connected_at')->nullable();
