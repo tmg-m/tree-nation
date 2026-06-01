@@ -5,7 +5,8 @@
     "scripts": {
         "build": "vite build",
         "build:ssr": "vite build && vite build --ssr",
-        "dev": "vite",
+        "dev": "concurrently -k -n laravel,vite -c \"#93c5fd,#c4b5fd\" \"php artisan serve --host=localhost --port=3000\" \"vite\"",
+        "dev:vite": "vite",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
         "lint": "eslint . --fix",
