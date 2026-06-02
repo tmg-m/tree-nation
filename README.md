@@ -26,10 +26,10 @@ composer install
 npm install
 ```
 
-3. Create environment file:
+3. Create environment file: 
 
 ```bash
-cp .env.example .env
+cp .env.example .env  # make .env duplicate the example env first
 php artisan key:generate
 ```
 

@@ -15,7 +15,7 @@ export default function StatCard({
                     valueClassName,
                 )}
             >
-                {value}
+                {value} {label === 'Total trees planted' && '🌳'}
             </p>
         </div>
     );

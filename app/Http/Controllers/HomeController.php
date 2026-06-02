@@ -9,8 +9,6 @@ class HomeController extends Controller
 {
     public function homePage(): Response
     {
-        return Inertia::render('Home', [
-            'title' => 'Home',
-        ]);
+        return Inertia::render('Home');
     }
 }
