@@ -90,6 +90,12 @@ flowchart LR
     I --> G
 ```
 
+## Nice to Have ( not implemented in Assessment)
+
+- **UI Components**: The current UI is built directly with Tailwind classes. We could adopt a component library like `shadcn/ui or chakra.ui or material ui components` to speed up UI consistency, reuse patterns, and reduce custom styling work.
+- **Live Updates**: The dashboard currently refreshes using interval-based polling (only for Assessment). Realtime listeners (eg. WebSockets, Laravel Reverb, Laravel Echo) for realtime updates.
+- **Rate Limiting**: API protection `POST /api/visits` limiting.
+- **Queue Workers**: High traffic, queue visit processing.
 ---
 
 ## Data Model
