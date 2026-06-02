@@ -1,6 +1,21 @@
+import { router } from '@inertiajs/react';
+import { useEffect } from 'react';
+
 import CustomersSection from '@/components/dashboard/CustomersSection';
+import SimulateVisitsSection from '@/components/dashboard/SimulateVisitsSection';
+import { registerDashboardRefreshListeners } from '@/lib/dashboardRefreshListeners';
 import StatCard from '@/components/dashboard/StatCard';
 import type { DashboardProps } from '@/types/dashboard';
+
+const DASHBOARD_DATA_KEYS = [
+    'customers',
+    'totalVisits',
+    'totalTreesPlanted',
+] as const;
+
+function refreshDashboardData(): void {
+    router.reload({ only: [...DASHBOARD_DATA_KEYS] });
+}
 
 export default function Dashboard({
     title,
@@ -8,6 +23,10 @@ export default function Dashboard({
     totalTreesPlanted,
     customers,
 }: DashboardProps) {
+    useEffect(() => {
+        return registerDashboardRefreshListeners(refreshDashboardData);
+    }, []);
+
     return (
         <div className="space-y-10">
             <h1 className="text-2xl font-semibold tracking-tight text-stone-800">
@@ -26,6 +45,7 @@ export default function Dashboard({
                 />
             </section>
             <CustomersSection customers={customers} />
+            <SimulateVisitsSection />
         </div>
     );
 }

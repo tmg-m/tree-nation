@@ -4,7 +4,7 @@ import type { CustomersSectionProps } from '@/types/dashboard';
 export default function CustomersSection({
     customers,
     title = 'Customers',
-    description = 'Visit counts per customer (seeded demo data).',
+    description = 'Updates automatically when visits are recorded (API, Postman, or simulate).',
 }: CustomersSectionProps) {
     return (
         <section aria-label="Customers">
