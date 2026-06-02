@@ -23,9 +23,14 @@ export default function Navbar() {
             <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
                 <Link
                     href="/"
-                    className="text-base font-semibold tracking-tight text-stone-800"
+                    className="inline-flex items-center"
+                    aria-label="Tree Nation home"
                 >
-                    Tree Nation
+                    <img
+                        src="/logo/treenation-logo.webp"
+                        alt="Tree Nation"
+                        className="h-8 w-auto sm:h-9"
+                    />
                 </Link>
                 <ul className="flex items-center gap-8">
                     {links.map(({ href, label }) => (

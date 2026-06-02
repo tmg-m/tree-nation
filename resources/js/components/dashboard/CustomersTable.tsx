@@ -2,20 +2,20 @@ import type { CustomersTableProps } from '@/types/dashboard';
 
 export default function CustomersTable({ customers }: CustomersTableProps) {
     return (
-        <div className="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm">
+        <div className="h-[420px] overflow-y-auto rounded-xl border border-stone-200 bg-white shadow-sm">
             <table className="w-full text-left text-sm">
                 <thead className="border-b border-stone-200 bg-stone-50">
                     <tr>
-                        <th className="px-4 py-3 font-medium text-stone-600">
+                        <th className="sticky top-0 bg-stone-50 px-4 py-3 font-medium text-stone-600">
                             Customer
                         </th>
-                        <th className="px-4 py-3 font-medium text-stone-600">
+                        <th className="sticky top-0 bg-stone-50 px-4 py-3 font-medium text-stone-600">
                             Visits
                         </th>
-                        <th className="hidden px-4 py-3 font-medium text-stone-600 sm:table-cell">
+                        <th className="sticky top-0 hidden bg-stone-50 px-4 py-3 font-medium text-stone-600 sm:table-cell">
                             Trees
                         </th>
-                        <th className="hidden px-4 py-3 font-medium text-stone-600 md:table-cell">
+                        <th className="sticky top-0 hidden bg-stone-50 px-4 py-3 font-medium text-stone-600 md:table-cell">
                             Last seen
                         </th>
                     </tr>
@@ -36,7 +36,18 @@ export default function CustomersTable({ customers }: CustomersTableProps) {
                                 {customer.treesPlanted}
                             </td>
                             <td className="hidden px-4 py-3 text-stone-600 md:table-cell">
-                                {customer.lastSeen}
+                                {customer.lastSeenDate === '—' ? (
+                                    '—'
+                                ) : (
+                                    <>
+                                        <span className="block">
+                                            {customer.lastSeenDate}
+                                        </span>
+                                        <span className="block text-xs text-stone-500">
+                                            {customer.lastSeenTime}
+                                        </span>
+                                    </>
+                                )}
                             </td>
                         </tr>
                     ))}

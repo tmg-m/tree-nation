@@ -3,14 +3,23 @@ export type DashboardCustomer = {
     displayName: string;
     visitCount: number;
     treesPlanted: number;
-    lastSeen: string;
+    lastSeenDate: string;
+    lastSeenTime: string;
 };
 
 export type DashboardProps = {
     title: string;
     totalVisits: number;
+    currentHourVisits: number;
     totalTreesPlanted: number;
     customers: DashboardCustomer[];
+    hourlyVisits: HourlyVisitPoint[];
+};
+
+export type HourlyVisitPoint = {
+    dateLabel: string;
+    hourLabel: string;
+    visits: number;
 };
 
 export type StatCardProps = {
@@ -27,4 +36,8 @@ export type CustomersSectionProps = {
 
 export type CustomersTableProps = {
     customers: DashboardCustomer[];
+};
+
+export type HourlyVisitsSectionProps = {
+    points: HourlyVisitPoint[];
 };
