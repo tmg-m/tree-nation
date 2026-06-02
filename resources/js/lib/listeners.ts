@@ -1,6 +1,6 @@
 type RefreshHandler = () => void;
 
-export function registerDashboardRefreshListeners(
+export function refreshListeners(
     onRefresh: RefreshHandler,
 ): () => void {
     const refreshWhenVisible = (): void => {

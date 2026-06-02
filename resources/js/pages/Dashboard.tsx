@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import CustomersSection from '@/components/dashboard/CustomersSection';
 import HourlyVisitsSection from '@/components/dashboard/HourlyVisitsSection';
 import SimulateVisitsSection from '@/components/dashboard/SimulateVisitsSection';
-import { registerDashboardRefreshListeners } from '@/lib/dashboardRefreshListeners';
+import { refreshListeners } from '@/lib/listeners';
 import StatCard from '@/components/dashboard/StatCard';
 import type { DashboardProps } from '@/types/dashboard';
 
@@ -29,7 +29,7 @@ export default function Dashboard({
     hourlyVisits,
 }: DashboardProps) {
     useEffect(() => {
-        return registerDashboardRefreshListeners(refreshDashboardData);
+        return refreshListeners(refreshDashboardData);
     }, []);
 
     return (
