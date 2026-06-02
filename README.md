@@ -196,23 +196,41 @@ Dashboard contains:
 ## Assumptions
 
 - SQLite
-- No authentication/API key
+- No authentication/API
 - Device integration is simulated via API calls (Postman/curl/frontend buttons).
+
+---
+
+## Tests
+
+Backend (PHP unit test for api):
+
+```bash
+php artisan test
+```
+
+Frontend (Vitest for page generation):
+
+```bash
+npm test
+```
+
+- `tests/Feature/VisitApiTest.php`
+- `resources/js/tests/Dashboard.test.tsx`
 
 ---
 
 ## Manual Test Commands
 
-CLI helper command (uses same core logic as API):
+CLI helper command
 
 ```bash
-php artisan testapi demo-customer --name="Demo Customer"
+php artisan testapi "demo-customer" --name="Demo Customer"
 ```
 
 Useful checks:
 
 ```bash
-npm run types:check
 php artisan route:list --path=api
 ```
 

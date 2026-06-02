@@ -14,8 +14,8 @@ class DemoDataSeeder extends Seeder
      */
     private const DEMO_CUSTOMERS = [
         [
-            'customer_id' => 'demo-customer',
-            'name' => 'Demo Customer',
+            'customer_id' => 'john-doe',
+            'name' => 'John Doe',
             'visit_offsets' => [
                 '-15 minutes',
                 '-45 minutes',
@@ -41,8 +41,8 @@ class DemoDataSeeder extends Seeder
             ],
         ],
         [
-            'customer_id' => 'bob-regular',
-            'name' => 'Bob Regular',
+            'customer_id' => 'bob-martin',
+            'name' => 'Bob Martin',
             'visit_offsets' => [
                 '-10 minutes',
                 '-1 hour -10 minutes',
@@ -51,6 +51,52 @@ class DemoDataSeeder extends Seeder
                 '-7 hours -25 minutes',
                 '-18 hours',
                 '-20 hours',
+            ],
+        ],
+        [
+            'customer_id' => 'charlie-weatherly',
+            'name' => 'Charlie Weatherly',
+            'visit_offsets' => [
+                '-20 minutes',
+                '-2 hours',
+                '-4 hours -10 minutes',
+                '-9 hours',
+                '-1 day -2 hours',
+            ],
+        ],
+        [
+            'customer_id' => 'dana-shopper',
+            'name' => 'Dana Shopper',
+            'visit_offsets' => [
+                '-5 minutes',
+                '-1 hour',
+                '-1 hour -30 minutes',
+                '-3 hours',
+                '-11 hours',
+                '-16 hours',
+            ],
+        ],
+        [
+            'customer_id' => 'eric-visitor',
+            'name' => 'Eric visitor',
+            'visit_offsets' => [
+                '-25 minutes',
+                '-2 hours -15 minutes',
+                '-5 hours',
+                '-6 hours -30 minutes',
+                '-14 hours',
+            ],
+        ],
+        [
+            'customer_id' => 'dan-white',
+            'name' => 'Dan White',
+            'visit_offsets' => [
+                '-35 minutes',
+                '-2 hours -45 minutes',
+                '-8 hours',
+                '-13 hours',
+                '-22 hours',
+                '-1 day -3 hours',
             ],
         ],
     ];
