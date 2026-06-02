@@ -12,6 +12,8 @@ class VisitApiTest extends TestCase
     // creates customer and first visit on first API call.
     public function test_first_visit_creates_customer(): void
     {
+        config()->set('tree_demo.visits_per_tree', 100);
+
         $response = $this->postJson('/api/visits', [
             'customer_id' => 'customer-1',
             'name' => 'Alice',
